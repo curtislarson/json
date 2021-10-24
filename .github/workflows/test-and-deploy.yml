@@ -1,4 +1,4 @@
-name: Deno
+name: TestAndDeploy
 
 on:
   push:
@@ -27,3 +27,10 @@ jobs:
 
       - name: Run tests
         run: deno test --unstable --allow-read
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./dist
