@@ -1,5 +1,5 @@
 test:
-	deno fmt --check
+	deno fmt --config deno.json --check
 	deno lint
 	deno test --unstable --allow-read
 
