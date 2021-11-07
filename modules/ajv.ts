@@ -18,7 +18,8 @@ export const getAjv07 = (code: boolean) => {
       }
     : opts;
   const ajv07 = new Ajv(allOpts);
-  addFormats(ajv07);
+  // deno-lint-ignore no-explicit-any
+  addFormats(ajv07 as any);
   moreFormats(ajv07);
   return ajv07;
 };
