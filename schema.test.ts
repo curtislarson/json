@@ -1,11 +1,9 @@
-import Ajv from "https://esm.sh/ajv";
-import addFormats from "https://esm.sh/ajv-formats";
+import { getAjv07 } from "./modules/ajv.ts";
 
 import { expandGlob } from "https://deno.land/std@0.112.0/fs/mod.ts";
 import { red } from "https://deno.land/std@0.112.0/fmt/colors.ts";
 
-const ajv = new Ajv();
-addFormats(ajv);
+const ajv = getAjv07();
 
 for await (const file of expandGlob("./dist/**/*.schema.json", {
   exclude: ["**/2020/**"],
