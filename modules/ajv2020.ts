@@ -1,4 +1,4 @@
-import Ajv2020 from "https://cdn.skypack.dev/ajv@v8.6.3/dist/2020?dts";
+import Ajv2020 from "https://esm.sh/ajv/dist/2020";
 import addFormats from "https://esm.sh/ajv-formats";
 import moreFormats from "https://esm.sh/ajv-formats-draft2019";
 
