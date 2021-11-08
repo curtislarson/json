@@ -12,7 +12,7 @@
   },
   "fmt": {
     "files": {
-      "include": ["dist/"]
+      "include": ["dist/schema", "dist/jsonld"]
     },
     "options": {
       "lineWidth": 80,

@@ -1,11 +1,11 @@
-import { getAjv07 } from "./modules/ajv.ts";
+import { getAjv07 } from "../modules/ajv.ts";
 
 import { expandGlob } from "https://deno.land/std@0.112.0/fs/mod.ts";
 import { red } from "https://deno.land/std@0.112.0/fmt/colors.ts";
 
 const ajv = getAjv07(false);
 
-for await (const file of expandGlob("./dist/**/*.schema.json", {
+for await (const file of expandGlob("../dist/**/*.schema.json", {
   exclude: ["**/2020/**"],
 })) {
   Deno.test(`${file.path} is valid schema`, async () => {
