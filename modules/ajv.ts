@@ -1,6 +1,6 @@
-import addFormats from "https://esm.sh/ajv-formats";
-import moreFormats from "https://esm.sh/ajv-formats-draft2019";
-import Ajv, { AnySchema } from "https://esm.sh/ajv";
+import addFormats from "https://cdn.skypack.dev/ajv-formats?dts";
+import moreFormats from "https://cdn.skypack.dev/ajv-formats-draft2019?dts";
+import Ajv, { AnySchema } from "https://cdn.skypack.dev/ajv?dts";
 
 export const Opts = {
   strictTypes: false,

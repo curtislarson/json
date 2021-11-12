@@ -1,5 +1,5 @@
-import { getAjv07 } from "../modules/ajv.ts";
-import { compileOne } from "../modules/compile.ts";
+import { getAjv07 } from "../ajv.ts";
+import { compileOne } from "../compile.ts";
 import requireFromString from "https://esm.sh/require-from-string";
 import { assertEquals } from "https://deno.land/std@0.112.0/testing/asserts.ts";
 
