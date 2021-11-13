@@ -1,6 +1,5 @@
-import addFormats from "https://cdn.skypack.dev/ajv-formats?dts";
-import moreFormats from "https://cdn.skypack.dev/ajv-formats-draft2019?dts";
-import Ajv, { AnySchema } from "https://cdn.skypack.dev/ajv?dts";
+import addFormats from "https://cdn.skypack.dev/ajv-formats@v2.1.1?dts";
+import Ajv, { AnySchema } from "https://cdn.skypack.dev/ajv@v8.7.1?dts";
 
 export const Opts = {
   strictTypes: false,
@@ -20,6 +19,5 @@ export const getAjv07 = (code: boolean) => {
   const ajv07 = new Ajv(allOpts);
   // deno-lint-ignore no-explicit-any
   addFormats(ajv07 as any);
-  moreFormats(ajv07);
   return ajv07;
 };

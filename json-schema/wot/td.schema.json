@@ -2,6 +2,7 @@
   "title": "Thing Description",
   "description": "JSON Schema for validating TD instances against the TD information model. TD instances can be with or without terms that have default values",
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://s.curte.us/wot/td",
   "definitions": {
     "anyUri": {
       "type": "string",

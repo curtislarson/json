@@ -1,13 +1,13 @@
-import { getAjv07 } from "../ajv.ts";
+import { getAjv07 } from "../modules/ajv.ts";
 
-import { expandGlob } from "https://deno.land/std@0.112.0/fs/mod.ts";
-import { red } from "https://deno.land/std@0.112.0/fmt/colors.ts";
+import { red } from "https://deno.land/std@0.114.0/fmt/colors.ts";
+import { schemaReader } from "../modules/fs.ts";
 
 const ajv = getAjv07(false);
 
-for await (const file of expandGlob("../dist/**/*.schema.json", {
-  exclude: ["**/2020/**"],
-})) {
+const root = new URL("../json-schema", import.meta.url).pathname;
+
+for await (const file of schemaReader(root)) {
   Deno.test(`${file.path} is valid schema`, async () => {
     const str = await Deno.readTextFile(file.path);
     const schema = JSON.parse(str);
